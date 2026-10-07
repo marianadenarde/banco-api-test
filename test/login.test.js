@@ -1,10 +1,11 @@
 const request = require('supertest');
 const { expect } = require('chai')
+require('dotenv').config()
 
 describe('Login', () => {
     describe('POST /login', () => {
         it('Deve retornar 200 com token em string quando usar credenciais válidas', async () => {
-            const resposta = await request('http://localhost:3000')
+            const resposta = await request(process.env.BASE_URL)
                 .post('/login')                                 //o endpoint que vamos chamar
                 .set('Content-Type', 'application/json')       // o header da nossa operação
                 .send({                                        // o body da nossa requisição     
