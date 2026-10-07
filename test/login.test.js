@@ -11,9 +11,7 @@ describe('Login', () => {
                     'username': 'julio.lima',
                     'senha': '123456'
                 })
-            console.log(resposta.status)
-            console.log(resposta.body)
-
+            
             expect(resposta.status).to.equal(200);            // para validar que o status code foi realmente 200
             expect(resposta.body.token).to.be.a('string');      //validar que o token é do tipo string
         })
